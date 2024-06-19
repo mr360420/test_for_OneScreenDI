@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "test-for-onescreendi"
+version = "0.1.0"
+description = ""
+authors = ["mr360 <vadgr1schin@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.7.4"
+pandas = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
