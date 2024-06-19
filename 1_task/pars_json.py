@@ -2,6 +2,7 @@ import json
 import os
 import logging
 import time
+import glob
 from functools import wraps
 
 import pandas as pd
@@ -33,18 +34,34 @@ def main_logic():
     """
     Основная логика парсинга json файла
     """
-    path_to_json = os.path.join(os.getcwd(), 'begin_and_result_file',
-                                'data_json.json')
-    path_save_result = os.path.join(os.getcwd(), 'begin_and_result_file',
-                                    'result_of_json.csv')
+    directory_for_file = 'begin_and_result_file'
+    directory = os.path.join(os.getcwd(), directory_for_file)
+    json_files = glob.glob(os.path.join(directory, '*.json'))
 
-    with open(path_to_json, 'r', encoding='utf-8') as f:
-        json_data = json.load(f)
+    for path_to_json in json_files:
+        path_save_result = os.path.join(os.getcwd(), directory_for_file,
+                                        f'result_of_{path_to_json}.csv')
 
-    data_for_dataframe = [Operation(**data) for data in json_data]
+        with open(path_to_json, 'r', encoding='utf-8') as f:
+            json_data = json.load(f)
 
+        data_for_dataframe = [Operation(**data) for data in json_data]
+
+        data_for_load = create_list_for_load(data_for_dataframe)
+
+        df = pd.DataFrame(data_for_load)
+        df.to_csv(path_save_result, index=False, sep=';',
+                  encoding='Windows-1251')
+
+
+def create_list_for_load(data: list) -> list:
+    """
+    Функция создания списка объектов класса ClassForLoad
+    :param data: список объектов класса Operation
+    :return: список объектов класса ClassForLoad
+    """
     data_for_load = list()
-    for value in data_for_dataframe:
+    for value in data:
         for i, _ in enumerate(value.services):
             data_for_load.append(
                 create_obj_cls_for_load(value,
@@ -56,10 +73,7 @@ def main_logic():
 
         if len(value.services) == 0:
             create_obj_cls_for_load(value)
-
-    df = pd.DataFrame(data_for_load)
-    df.to_csv(path_save_result, index=False, sep=';',
-              encoding='Windows-1251')
+    return data_for_load
 
 
 def create_obj_cls_for_load(value: Operation, name=None, price=None,
