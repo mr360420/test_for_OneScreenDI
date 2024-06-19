@@ -8,10 +8,9 @@ load_dotenv()
 
 
 def main_logic():
-    list_db = [
+    list_db = (
         'MSSQL',
-        'POSTGRESQL']
-
+        'POSTGRESQL')
     for name_db in list_db:
         if name_db == 'POSTGRESQL':
             schema = os.getenv('POSTGRESQL_DB_SCHEMA')

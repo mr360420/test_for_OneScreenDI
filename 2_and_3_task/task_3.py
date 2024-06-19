@@ -10,9 +10,9 @@ load_dotenv()
 
 
 def main_logic():
-    list_db = [
+    list_db = (
         'MSSQL',
-        'POSTGRESQL']
+        'POSTGRESQL')
 
     directory_for_file = 'files_for_3_task'
     directory = os.path.join(os.getcwd(), directory_for_file)
