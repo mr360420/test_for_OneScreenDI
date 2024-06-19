@@ -4,9 +4,7 @@ operation_id;operation_date;posting_number;sku;type_operation;delivery_schema ;n
 17302536474;2023-11-26;0001;[{'name': 'Товар А', 'sku': 1}, {'name': 'Товар Б', 'sku': 2}, {'name': 'Товар Б', 'sku': 2}];OperationAgentDeliveredToCustomer;FBS;MarketplaceServiceItemDirectFlowLogistic;-210.0;3;-398.53;3
 17302536474;2023-11-26;0001;[{'name': 'Товар А', 'sku': 1}, {'name': 'Товар Б', 'sku': 2}, {'name': 'Товар Б', 'sku': 2}];OperationAgentDeliveredToCustomer;FBS;MarketplaceServiceItemDropoffPVZ;-30.0;3;-398.53;3
 17326739690;2023-11-27;0001;[];OperationAgentStornoDeliveredToCustomer;FBS;MarketplaceServiceItemDelivToCustomer;50.0;0;50.0;0
-17326535237;2023-11-27;0001;[{'name': 'Товар Б', 'sku': 2}, {'name': 'Товар Б', 'sku': 2}];ClientReturnAgentOperation;FBS;;;2;;2
 17327216263;2023-11-27;0001;[];OperationAgentStornoDeliveredToCustomer;FBS;MarketplaceServiceItemDelivToCustomer;50.0;0;50.0;0
-17344119055;2023-11-28;0001;[{'name': 'Товар А', 'sku': 1}];ClientReturnAgentOperation;FBS;;;1;;1
 17344212215;2023-11-28;0001;[];OperationAgentStornoDeliveredToCustomer;FBS;MarketplaceServiceItemDelivToCustomer;53.45;0;53.45;0
 17491793260;2023-12-03;0001;[{'name': 'Товар Б', 'sku': 2}];OperationReturnGoodsFBSofRMS;FBS;MarketplaceServiceItemReturnAfterDelivToCustomer;-50.0;1;-135.0;1
 17491793260;2023-12-03;0001;[{'name': 'Товар Б', 'sku': 2}];OperationReturnGoodsFBSofRMS;FBS;MarketplaceServiceItemRedistributionReturnsPVZ;-15.0;1;-135.0;1
